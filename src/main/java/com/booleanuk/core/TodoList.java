@@ -75,7 +75,19 @@ public class TodoList {
 
         System.out.println(completedTasks);
         return completedTasks;
+    }
 
+    public ArrayList<String> getUncompletedTasks(){
+
+        ArrayList<String> uncompletedTasks = new ArrayList<>();
+        for (Map.Entry<String, Boolean> entry : toDoMap.entrySet()){
+            if(entry.getValue() == false){
+                uncompletedTasks.add(entry.getKey());
+            }
+        }
+
+        System.out.println(uncompletedTasks);
+        return uncompletedTasks;
     }
 
     public static void main(String[] args) {

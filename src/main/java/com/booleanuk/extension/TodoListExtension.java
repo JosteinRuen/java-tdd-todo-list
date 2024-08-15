@@ -23,7 +23,6 @@ public class TodoListExtension {
         Task newTask = new Task(task, uniqueID, false, myDate.toString());
         todoList.add(newTask);
         return true;
-
     }
 
 

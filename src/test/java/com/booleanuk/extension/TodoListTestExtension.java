@@ -14,5 +14,14 @@ class TodoListTestExtension {
         Assertions.assertTrue(todoList.addTask("Make Dinner"));
     }
 
+    @Test
+    public void updateTaskNameByIDTest(){
+        TodoList todoList = new TodoList();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+
+        Assertions.assertTrue(updateTaskNameByID(1, "Walk the dog"));
+    }
+
 
 }

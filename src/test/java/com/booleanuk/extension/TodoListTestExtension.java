@@ -44,7 +44,7 @@ class TodoListTestExtension {
         todoList.addTask("Work out");
         todoList.addTask("Eat dinner");
 
-        Assertions.assertTrue(todoList.updateStatusByID(1, true));
+        Assertions.assertTrue(todoList.getDateAndTime());
     }
 
 

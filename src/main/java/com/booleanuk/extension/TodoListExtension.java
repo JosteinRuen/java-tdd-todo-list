@@ -49,6 +49,18 @@ public class TodoListExtension {
         return false;
     }
 
+    public Boolean getDateAndTime(){
+        if(todoList.size()== 0){
+            return false;
+        }
+
+        for(int i = 0; i < todoList.size(); i++){
+            System.out.println(todoList.get(i).getTaskName());
+            System.out.println(todoList.get(i).getDateCreated());
+        }
+        return true;
+    }
+
 
     public static void main(String[] args) {
         ArrayList<String> newlist;

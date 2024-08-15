@@ -81,6 +81,17 @@ class TodoListTest {
 
     }
 
+    @Test
+    public void getSortedTasks(){
+        TodoList todoList = new TodoList();
+        todoList.addTask("Work out");
+        todoList.addTask("Make dinner");
+        todoList.changeStatus("Work out", true);
+        ArrayList<String> newList = todoList.getSortedTasks("Ascending");
+
+        Assertions.assertEquals("Make dinner",newList.getFirst());
+    }
+
 
 
 }

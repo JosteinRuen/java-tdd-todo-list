@@ -25,6 +25,17 @@ public class TodoListExtension {
         return true;
     }
 
+    public Boolean getTaskByID(int id){
+        for (int i = 0; i < todoList.size(); i++){
+            if(todoList.get(i).getUniqueID() == id){
+                System.out.println(todoList.get(i).toString());
+                return true;
+            }
+        }
+        System.out.println("Couldnt find the task");
+        return false;
+    }
+
     public Boolean updateTaskNameByID(int id, String newName){
         for (int i = 0; i < todoList.size(); i++){
             if (todoList.get(i).getUniqueID() == id){

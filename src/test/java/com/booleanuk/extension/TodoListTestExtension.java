@@ -50,6 +50,14 @@ class TodoListTestExtension {
     //Recreate the core exercise with the Task class instead
 
 
+    public void getCompletedTasksTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+        todoList.updateStatusByID(0, true);
+
+        Assertions.assertEquals("Work out", todoList.getCompletedTasks().get(0).getTaskName());
+    }
 
 
 }

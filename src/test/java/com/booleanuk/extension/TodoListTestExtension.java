@@ -1,5 +1,6 @@
 package com.booleanuk.extension;
 
+import com.booleanuk.core.Task;
 import com.booleanuk.core.TodoList;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -106,6 +107,12 @@ class TodoListTestExtension {
         todoList.addTask("Work out");
         todoList.addTask("Eat dinner");
         todoList.updateStatusByID(1, true); // set workout to true
+
+        ArrayList<Task> ascendingList = todoList.getSortedTasks("Ascending");
+        ArrayList<Task> descendingList = todoList.getSortedTasks("Descending");
+
+        Assertions.assertEquals("Eat dinner",ascendingList.getFirst().getTaskName());
+        Assertions.assertEquals("Work out",descendingList.getFirst().getTaskName());
 
 
 

@@ -116,7 +116,12 @@ public class TodoListExtension {
     }
 
     public ArrayList<Task> getSortedTasks(String order){
-        ArrayList<Task> sortedTasks = todoList;
+        //ArrayList<Task> sortedTasks = todoList;
+        ArrayList<Task> sortedTasks = new ArrayList<>();
+        for(int i = 0; i < todoList.size(); i++){
+            sortedTasks.add(todoList.get(i));
+        }
+
         if(order.equals("Ascending")){
             sortedTasks.sort(((t1, t2) -> t1.getTaskName().compareTo(t2.getTaskName())));
         }else{
@@ -139,10 +144,10 @@ public class TodoListExtension {
         myList.addTask("Zoom meeting");
         myList.addTask("Bus");
 
-        myList.getSortedTasks("Ascsdending");
+        myList.getSortedTasks("Ascending");
 
         for (int i = 0; i < myList.todoList.size(); i++){
-            //System.out.println(myList.todoList.get(i).toString());
+            System.out.println(myList.todoList.get(i).toString());
         }
 
     }

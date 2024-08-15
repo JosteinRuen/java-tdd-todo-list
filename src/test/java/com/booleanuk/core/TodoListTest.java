@@ -87,11 +87,11 @@ class TodoListTest {
         todoList.addTask("Work out");
         todoList.addTask("Make dinner");
         todoList.changeStatus("Work out", true);
-        ArrayList<String> newList = todoList.getSortedTasks("Ascending");
+        ArrayList<String> ascendingList = todoList.getSortedTasks("Ascending");
+        ArrayList<String> descendingList = todoList.getSortedTasks("Descending");
 
-        Assertions.assertEquals("Make dinner",newList.getFirst());
+        Assertions.assertEquals("Make dinner Status: uncomplete",ascendingList.getFirst());
+        Assertions.assertEquals("Work out Status: complete",descendingList.getFirst());
     }
-
-
 
 }

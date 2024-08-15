@@ -1,5 +1,6 @@
 package com.booleanuk.core;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,8 +10,6 @@ import java.util.*;
 
 public class TodoList {
     HashMap<String, Boolean> toDoMap;
-
-    String output;
 
     public TodoList(){
         toDoMap = new HashMap<>();
@@ -45,7 +44,6 @@ public class TodoList {
         ArrayList<String> newList = new ArrayList<>();
 
         for (Map.Entry<String, Boolean> entry : toDoMap.entrySet()){
-            //System.out.println(entry.getKey() + " " +  entry.getValue());
             if(!entry.getValue()){
                 newList.add(entry.getKey() + " Status: Incomplete");
             }else{
@@ -62,10 +60,7 @@ public class TodoList {
     }
 
     public ArrayList<String> getCompletedTasks(){
-
-        //ArrayList<String> completedTasks = new ArrayList<>(toDoMap.keySet());
         ArrayList<String> completedTasks = new ArrayList<>();
-        //Collections.sort(completedTasks);
 
         for (Map.Entry<String, Boolean> entry : toDoMap.entrySet()){
             if(entry.getValue() == true){
@@ -113,13 +108,40 @@ public class TodoList {
         }
     }
 
+    public ArrayList<String> getSortedTasks(String order){
+        ArrayList<String> sortedTasks = new ArrayList<>(toDoMap.keySet());
+        if(order.equals("Ascending")){
+            Collections.sort(sortedTasks);
+        }else{
+            Collections.sort(sortedTasks, Collections.reverseOrder());
+        }
+
+        for (int i = 0; i < sortedTasks.size(); i++){
+            if(toDoMap.get(sortedTasks.get(i)) == true){
+                sortedTasks.set(i, sortedTasks.get(i) + " Status: complete");
+            }else{
+                sortedTasks.set(i, sortedTasks.get(i) + " Status: uncomplete");
+            }
+        }
+
+        //print out for user
+        for (int i = 0; i < sortedTasks.size(); i++){
+            System.out.println(sortedTasks.get(i));
+        }
+
+        return sortedTasks;
+
+
+    }
+
     public static void main(String[] args) {
+        ArrayList<String> newlist;
         TodoList todoList = new TodoList();
         todoList.addTask("Make Dinner");
         todoList.addTask("Work out");
         todoList.changeStatus("Work out", true);
-        String s = todoList.searchTasks("Work out");
-        System.out.println(s);
+        newlist = todoList.getSortedTasks("Ascending");
+        System.out.println(newlist);
 
     }
 

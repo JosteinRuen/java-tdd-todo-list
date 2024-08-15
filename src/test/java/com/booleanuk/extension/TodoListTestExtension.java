@@ -30,7 +30,21 @@ class TodoListTestExtension {
         todoList.addTask("Work out");
         todoList.addTask("Eat dinner");
 
-        Assertions.assertTrue(todoList.updateStatusByID(1, "Walk the dog"));
+        Assertions.assertTrue(todoList.updateStatusByID(1, true));
+
+        //Sanity check
+        for (int i = 0; i < todoList.todoList.size(); i++){
+            System.out.println(todoList.todoList.get(i));
+        }
+    }
+
+    @Test
+    public void getDateAndTimeTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+
+        Assertions.assertTrue(todoList.updateStatusByID(1, true));
     }
 
 

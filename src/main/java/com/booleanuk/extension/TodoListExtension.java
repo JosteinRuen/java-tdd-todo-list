@@ -35,8 +35,18 @@ public class TodoListExtension {
         }
         System.out.println("couldnt' find task");
         return false;
+    }
 
-
+    public Boolean updateStatusByID(int id, Boolean status){
+        for(int i = 0; i < todoList.size(); i++){
+            if(todoList.get(i).getUniqueID() == id){
+                System.out.println("Found task, updating status");
+                todoList.get(i).setStatus(status);
+                return true;
+            }
+        }
+        System.out.println("Couldnt find task");
+        return false;
     }
 
 

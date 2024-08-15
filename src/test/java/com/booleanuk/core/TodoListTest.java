@@ -68,7 +68,16 @@ class TodoListTest {
 
         String search = todoList.searchTasks("Work out");
         Assertions.assertEquals("Work out Status: complete", search);
+    }
 
+    @Test
+    public void removeTaskTest(){
+        TodoList todoList = new TodoList();
+        todoList.addTask("Work out");
+        todoList.addTask("Make dinner");
+        todoList.changeStatus("Work out", true);
+
+        Assertions.assertTrue(todoList.removeTask("Make dinner"));
 
     }
 

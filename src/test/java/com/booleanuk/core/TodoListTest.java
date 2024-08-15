@@ -33,4 +33,14 @@ class TodoListTest {
         Assertions.assertEquals("Work out Status: Incomplete", newList.get(1));
     }
 
+    @Test
+    public void getCompletedTasksTest(){
+        TodoList todoList = new TodoList();
+        todoList.addTask("Work out");
+        todoList.addTask("Make dinner");
+        ArrayList<String> newList = new ArrayList<>();
+        newList = todoList.getCompletedTasks();
+
+    }
+
 }

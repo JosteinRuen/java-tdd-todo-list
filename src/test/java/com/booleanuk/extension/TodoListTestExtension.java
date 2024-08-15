@@ -47,5 +47,9 @@ class TodoListTestExtension {
         Assertions.assertTrue(todoList.getDateAndTime());
     }
 
+    //Recreate the core exercise with the Task class instead
+
+
+
 
 }

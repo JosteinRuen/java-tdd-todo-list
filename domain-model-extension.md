@@ -25,6 +25,10 @@ Class Task
 | Boolean status  | getStatus()   |   |   |
 | int dateCreated | getDate()     |   |   |
 | String taskName | getTaskName() |   |   |
+|                 | setStatus()   |   |   |
+|                 | setTaskName() |   |   |
+|                 |               |   |   |
+|                 |               |   |   |
 
 Class TodoListExtension 
 
@@ -36,6 +40,6 @@ Class TodoListExtension
 |                 |                                          | task doesn't exist  | print error and return false          |            |
 |                 | updateStatusByID(int id, Boolean status) | task exists         | setStatus(id, newStatus), return true |            |
 |                 |                                          | task doesn't exists | print error, return false             |            |
-|                 | getDateAndTime()                         | List isn't empty    | print date and time for tasks         |            |
-|                 |                                          |                     |                                       |            |
+|                 | getDateAndTime()                         | List isn't empty    | print and return true                 |            |
+|                 |                                          | List is empty       | return false                          |            |
 |                 |                                          |                     |                                       |            |

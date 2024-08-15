@@ -9,19 +9,22 @@ import java.util.ArrayList;
 class TodoListTestExtension {
     @Test
     public void addTaskTest() {
-        TodoList todoList = new TodoList();
+        TodoListExtension todoList = new TodoListExtension();
 
         Assertions.assertTrue(todoList.addTask("Make Dinner"));
     }
 
     @Test
     public void updateTaskNameByIDTest(){
-        TodoList todoList = new TodoList();
+        TodoListExtension todoList = new TodoListExtension();
         todoList.addTask("Work out");
         todoList.addTask("Eat dinner");
 
-        Assertions.assertTrue(updateTaskNameByID(1, "Walk the dog"));
+        Assertions.assertTrue(todoList.updateTaskNameByID(1, "Walk the dog"));
+        Assertions.assertEquals("Walk the dog", todoList.todoList.get(0).getTaskName());
     }
+
+    @Test
 
 
 }

@@ -59,6 +59,19 @@ class TodoListTest {
         Assertions.assertTrue(newList.contains("Make dinner"));
     }
 
+    @Test
+    public void searchTasksTest(){
+        TodoList todoList = new TodoList();
+        todoList.addTask("Work out");
+        todoList.addTask("Make dinner");
+        todoList.changeStatus("Work out", true);
+
+        String search = toDoList.searchTasks("Work out");
+        Assertions.assertEquals("Work out Status: Complete", search);
+
+
+    }
+
 
 
 }

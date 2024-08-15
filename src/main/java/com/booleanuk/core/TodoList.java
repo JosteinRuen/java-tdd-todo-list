@@ -90,12 +90,26 @@ public class TodoList {
         return uncompletedTasks;
     }
 
+    public String searchTasks(String search){
+        if (toDoMap.containsKey(search)){
+            if (toDoMap.get(search) == true){
+                return search + " Status: complete";
+            }else{
+                return search + " Status: uncomplete";
+            }
+        }else{
+            System.out.println("Couldn't find task " + search);
+            return "";
+        }
+    }
+
     public static void main(String[] args) {
         TodoList todoList = new TodoList();
         todoList.addTask("Make Dinner");
         todoList.addTask("Work out");
         todoList.changeStatus("Work out", true);
-        ArrayList<String> newList = todoList.getCompletedTasks();
+        String s = todoList.searchTasks("Work out");
+        System.out.println(s);
 
     }
 

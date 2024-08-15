@@ -15,6 +15,15 @@ class TodoListTestExtension {
     }
 
     @Test
+    public void seeAllTasksTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+        Assertions.assertTrue(todoList.seeAllTasks());
+    }
+
+
+    @Test
     public void updateTaskNameByIDTest(){
         TodoListExtension todoList = new TodoListExtension();
         todoList.addTask("Work out");
@@ -47,7 +56,17 @@ class TodoListTestExtension {
         Assertions.assertTrue(todoList.getDateAndTime());
     }
 
-    //Recreate the core exercise with the Task class instead
+    //Recreate the core exercise with the Task class instead from here
+    //
+
+    @Test
+    public void removeTaskTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+
+        Assertions.assertTrue(todoList.removeTask(1));
+    }
 
     @Test
     public void getCompletedTasksTest(){

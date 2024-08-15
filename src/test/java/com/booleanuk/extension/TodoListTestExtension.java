@@ -81,6 +81,18 @@ class TodoListTestExtension {
         Assertions.assertTrue(todoList.getTaskByID(1));
     }
 
+    @Test
+    public void getSortedTasksTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+        todoList.updateStatusByID(1, true); // set workout to true
+
+
+
+    }
+
+
 
 
 

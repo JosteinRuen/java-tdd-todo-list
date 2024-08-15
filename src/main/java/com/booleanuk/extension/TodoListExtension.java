@@ -94,6 +94,18 @@ public class TodoListExtension {
         return uncompletedTasks;
     }
 
+    public ArrayList<Task> getSortedTasks(String order){
+        ArrayList<Task> sortedTasks = todoList;
+        if(order.equals("Ascending")){
+            sortedTasks.sort(((t1, t2) -> t1.getTaskName().compareTo(t2.getTaskName())));
+        }else{
+            sortedTasks.sort(((t1, t2) -> t1.getTaskName().compareTo(t2.getTaskName())));
+            Collections.reverse(sortedTasks);
+        }
+        System.out.println(sortedTasks);
+        return sortedTasks;
+    }
+
 
 
 
@@ -103,9 +115,13 @@ public class TodoListExtension {
         TodoListExtension myList = new TodoListExtension();
         myList.addTask("Make Dinner");
         myList.addTask("Work out");
+        myList.addTask("Zoom meeting");
+        myList.addTask("Bus");
+
+        myList.getSortedTasks("Ascsdending");
 
         for (int i = 0; i < myList.todoList.size(); i++){
-            System.out.println(myList.todoList.get(i).toString());
+            //System.out.println(myList.todoList.get(i).toString());
         }
 
     }

@@ -103,6 +103,16 @@ public class TodoList {
         }
     }
 
+    public Boolean removeTask(String task){
+        if(toDoMap.containsKey(task)){
+            toDoMap.remove(task);
+            return true;
+        }else{
+            System.out.println("Couldn't find task: " + task);
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         TodoList todoList = new TodoList();
         todoList.addTask("Make Dinner");

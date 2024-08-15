@@ -11,9 +11,11 @@ class TodoListTest {
         Assertions.assertTrue(todoList.addTask("Make Dinner"));
     }
 
+    @Test
     public void changeStatusTest(){
         TodoList todoList = new TodoList();
 
+        todoList.addTask("Make Dinner");
         Assertions.assertTrue(todoList.changeStatus("Make Dinner", true));
 
     }

@@ -21,6 +21,21 @@ public class TodoList {
         }
     }
 
+    public Boolean changeStatus(String task, Boolean newStatus){
+        if(toDoMap.containsKey(task)){
+            if(toDoMap.get(task) == newStatus){
+                System.out.println("Task already " + newStatus);
+                return false;
+            }else{
+                toDoMap.put(task, newStatus);
+                return true;
+            }
+        }else{
+            System.out.println("Cannot find task: " + task + "in list");
+            return false;
+        }
+    }
+
 
 
 

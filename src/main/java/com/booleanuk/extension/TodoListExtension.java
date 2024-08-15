@@ -25,6 +25,17 @@ public class TodoListExtension {
         return true;
     }
 
+    public boolean seeAllTasks(){
+        if(todoList.size() == 0){
+            System.out.println("No tasks to display");
+            return false;
+        }
+        for(int i = 0; i < todoList.size(); i++){
+            System.out.println(todoList.get(i));
+        }
+        return true;
+    }
+
     public Boolean getTaskByID(int id){
         for (int i = 0; i < todoList.size(); i++){
             if(todoList.get(i).getUniqueID() == id){
@@ -73,6 +84,16 @@ public class TodoListExtension {
     }
 
     //Recreate the core functionality with the Task class instead
+
+    public boolean removeTask(int id){
+        for (int i = 0; i < todoList.size(); i++) {
+            if (todoList.get(i).getUniqueID() == id){
+                todoList.remove(todoList.get(i));
+                return true;
+            }
+        }
+        return false;
+    }
 
     public ArrayList<Task> getCompletedTasks(){
         ArrayList<Task> completedTasks = new ArrayList<>();

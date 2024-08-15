@@ -25,6 +25,13 @@ class TodoListTestExtension {
     }
 
     @Test
+    public void updateStatusByIDTest(){
+        TodoListExtension todoList = new TodoListExtension();
+        todoList.addTask("Work out");
+        todoList.addTask("Eat dinner");
+
+        Assertions.assertTrue(todoList.updateStatusByID(1, "Walk the dog"));
+    }
 
 
 }

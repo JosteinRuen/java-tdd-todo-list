@@ -73,6 +73,19 @@ public class TodoListExtension {
         return completedTasks;
     }
 
+    public ArrayList<Task> getUncompletedTasks(){
+        ArrayList<Task> uncompletedTasks = new ArrayList<>();
+        for (int i = 0; i < todoList.size(); i++){
+            if(todoList.get(i).getStatus()== false){
+                uncompletedTasks.add(todoList.get(i));
+            }
+        }
+        return uncompletedTasks;
+    }
+
+
+
+
 
     public static void main(String[] args) {
         ArrayList<String> newlist;

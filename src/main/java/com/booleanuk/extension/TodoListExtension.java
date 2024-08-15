@@ -61,6 +61,18 @@ public class TodoListExtension {
         return true;
     }
 
+    //Recreate the core functionality with the Task class instead
+
+    public ArrayList<Task> getCompletedTasks(){
+        ArrayList<Task> completedTasks = new ArrayList<>();
+        for (int i = 0; i < todoList.size(); i++){
+            if(todoList.get(i).getStatus()== true){
+                completedTasks.add(todoList.get(i));
+            }
+        }
+        return completedTasks;
+    }
+
 
     public static void main(String[] args) {
         ArrayList<String> newlist;

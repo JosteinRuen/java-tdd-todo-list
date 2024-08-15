@@ -39,7 +39,11 @@ class TodoListTest {
         todoList.addTask("Work out");
         todoList.addTask("Make dinner");
         ArrayList<String> newList = new ArrayList<>();
+        todoList.changeStatus("Work out", true);
         newList = todoList.getCompletedTasks();
+
+        Assertions.assertTrue(newList.contains("Work out"));
+        Assertions.assertFalse(newList.contains("Make dinner"));
 
     }
 
